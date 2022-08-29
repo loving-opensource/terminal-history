@@ -2,7 +2,7 @@ const fs = require("fs");
 const hashmap = {};
 
 // Read the history file and parse the data
-const array = fs.readFileSync("history.txt").toString().split("\n");
+const array = fs.readFileSync("kaiHistory.txt").toString().split("\n");
 for (historyCom in array) {
   const command = array[historyCom].split(" ");
   // we only want to store the command, ignore the first 2 elements
@@ -22,12 +22,8 @@ const sortedHash = Object.fromEntries(
   Object.entries(hashmap).sort(([, lowerValue], [, higherValue]) => higherValue - lowerValue  )
 );
 
-console.log(sortedHash);
 for (const [key, value] of Object.entries(sortedHash)) {
   console.log(`${key}: ${value}`);
-  if (value == max) {
-    returnArray.push(key);
-  }
+
 }
 
-console.log(returnArray);
