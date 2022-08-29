@@ -5,6 +5,7 @@
 
 ## TO DO:
 * Protect main branch
+* explore regex to replace splicing
 
 
 ## Reference (WRITE GOOD CODE!)
