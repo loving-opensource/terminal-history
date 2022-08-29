@@ -22,12 +22,22 @@ const sortedhash = Object.fromEntries(
   Object.entries(hashmap).sort(([, a], [, b]) => a - b)
 );
 
-console.log(sortable);
-for (const [key, value] of Object.entries(sortedhash)) {
-  // console.log(`${key}: ${value}`);
-  // if (value == max) {
-  //   returnArray.push(key);
-  // }
-}
+// const reversedS = sortedhash.reverse();
+
+console.log(sortedhash);
+
+const reversedKeys = Object.entries(sortedhash).reverse();
+
+const final = reversedKeys.slice(0, 5);
+
+// const topFive = Object.fromEntries(Object.entries(reversedS).slice(0, 5));
+
+console.log(final);
+// for (const [key, value] of Object.entries(sortedhash)) {
+//   // console.log(`${key}: ${value}`);
+//   // if (value == max) {
+//   //   returnArray.push(key);
+//   // }
+// }
 
 // console.log(returnArray);
