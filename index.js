@@ -19,9 +19,13 @@ const returnArray = [];
 // console.log(max);
 for (const [key, value] of Object.entries(hashmap)) {
   // console.log(`${key}: ${value}`);
-  if (value == max) {
-    returnArray.push(key);
-  }
+  returnArray.push(value);
+  returnArray.sort();
+  returnArray.reverse();
+
+  // if (value == max) {
+  //   returnArray.push(key);
+  // }
 }
 
 console.log(returnArray);
