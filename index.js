@@ -52,6 +52,10 @@ console.log(nums);
 //   }
 // }
 
+for (const [key, value] of Object.entries(sortedHash)) {
+  console.log(`${key}: ${value}`);
+}
+
 // notes:
 // const command = array[historyCom].split(" ");
 // // we only want to store the command, ignore the first 2 elements
