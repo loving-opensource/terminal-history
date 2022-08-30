@@ -9,7 +9,6 @@ for (historyCom in array) {
   cleanCommand = command.replace(/[, ]+/g, " ").replace(/\d+/g, "").trim();
 
   // const spliceC = command.slice(4).toString();
-  
 
   // if the command is not in the hashmap, add it
   if (!(cleanCommand in hashmap)) {
@@ -22,17 +21,32 @@ for (historyCom in array) {
 
 // now, let's sort the hashmap by value
 const sortedHash = Object.fromEntries(
-  Object.entries(hashmap).sort(([, lowerValue], [, higherValue]) => higherValue - lowerValue  )
+  Object.entries(hashmap).sort(
+    ([, lowerValue], [, higherValue]) => higherValue - lowerValue
+  )
 );
+console.log(sortedHash);
 
-for (const [key, value] of Object.entries(sortedHash)) {
-  console.log(`${key}: ${value}`);
+// We need to ask user How many top histories do you want?
+// required readline
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-}
+// Ask question to user then, Process getting histories
+readline.question("How many histories do you want?", (num) => {
+  readline.close();
+});
 
-
+// for (const [key, value] of Object.entries(sortedHash)) {
+//   // console.log(`${key}: ${value}`);
+//   if (howMany != null) {
+//     key[num];
+//   }
+// }
 
 // notes:
-  // const command = array[historyCom].split(" ");
-  // // we only want to store the command, ignore the first 2 elements
-  // const spliceC = command.slice(3).toString();
+// const command = array[historyCom].split(" ");
+// // we only want to store the command, ignore the first 2 elements
+// const spliceC = command.slice(3).toString();
