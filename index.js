@@ -4,6 +4,7 @@ const userNum = 0;
 
 // Read the history file and parse the data
 const array = fs.readFileSync("kaiHistory.txt").toString().split("\n");
+
 for (historyCom in array) {
   const command = array[historyCom].split(" ").toString();
   // we only want to store the command, ignore the first 2 elements
@@ -21,26 +22,30 @@ for (historyCom in array) {
 }
 
 // now, let's sort the hashmap by value
-const sortedHash = Object.fromEntries(
-  Object.entries(hashmap).sort(
-    ([, lowerValue], [, higherValue]) => higherValue - lowerValue
-  )
+const sortedHash = Object.entries(hashmap).sort(
+  ([, lowerValue], [, higherValue]) => higherValue - lowerValue
 );
+
 // console.log(sortedHash);
 
 // We need to ask user How many top histories do you want?
 // Connecting to terminal from VScode
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+// const readline = require("readline").createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
 
 // Ask question to user then, Process getting histories
-const nums = readline.question("How many histories do you want? :", (num) => {
-  readline.close();
-});
+// const nums = readline.question("How many histories do you want? :", (num) => {
+//   readline.close();
+// });
 
-console.log(nums);
+const requiredHis = sortedHash
+  .slice(0, 5)
+  .reduce((a, [k, v]) => ({ ...a, [k]: v }), {});
+// console.log(nums);
+
+console.log(requiredHis);
 
 // console.log(userNum);
 
@@ -52,9 +57,9 @@ console.log(nums);
 //   }
 // }
 
-for (const [key, value] of Object.entries(sortedHash)) {
-  console.log(`${key}: ${value}`);
-}
+// for (const [key, value] of Object.entries(sortedHash)) {
+//   console.log(`${key}: ${value}`);
+// }
 
 // notes:
 // const command = array[historyCom].split(" ");
