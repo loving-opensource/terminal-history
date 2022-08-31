@@ -56,3 +56,37 @@ const fiveLowest = sortedValues
 
 console.log(fiveHighest);
 console.log(fiveLowest);
+
+// ---------------------------- NOTES --------------------------------------
+// const spliceC = command.slice(4).toString();
+// const command = array[historyCom].split(" ");
+// // we only want to store the command, ignore the first 2 elements
+// const spliceC = command.slice(3).toString();
+
+// >> How many number of histories
+// console.log("this is user's choice num:", userNum);
+// for (const [key, value] of Object.entries(sortedHash)) {
+//   // console.log(`${key}: ${value}`);
+//   if (howMany != null) {
+//     key[num];
+//   }
+// }
+
+// for (const [key, value] of Object.entries(sortedHash)) {
+//   console.log(`${key}: ${value}`);
+// }
+
+// --------- user input Memo -------------
+
+// We need to ask user How many top histories do you want?
+// Connecting to terminal from VScode
+
+// const readline = require("readline").createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+
+// Ask question to user then, Process getting histories
+// const nums = readline.question("How many histories do you want? :", (num) => {
+//   readline.close();
+// });
