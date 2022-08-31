@@ -1,6 +1,6 @@
 {
   "name": "terminal-history",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/loving-opensource/terminal-history.git"
   },
-  "keywords": ["history","terminal","top shell commands"],
+  "keywords": [
+    "history",
+    "terminal",
+    "top shell commands"
+  ],
   "author": "stepbystepdayo <sl.deve080412@gmail.com>",
   "license": "MIT",
   "bugs": {
