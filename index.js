@@ -8,7 +8,7 @@ let numberToShow = 0;
 // Read the history file and parse the data
 
 function readFile() {
-  const array = fs.readFileSync("kaiHistory.txt").toString().split("\n");
+  const array = fs.readFileSync("testHistory.txt").toString().split("\n");
 
   return array;
 }

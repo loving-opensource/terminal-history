@@ -90,3 +90,8 @@ console.log(fiveLowest);
 // const nums = readline.question("How many histories do you want? :", (num) => {
 //   readline.close();
 // });
+
+// ## TO DO:
+
+// - Protect main branch
+// - explore regex to replace splicing
