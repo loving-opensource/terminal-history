@@ -1,6 +1,6 @@
 {
   "name": "terminal-history",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,3 @@
   },
   "homepage": "https://github.com/loving-opensource/terminal-history#readme"
 }
-
-
