@@ -89,7 +89,7 @@ async function getUrHistories() {
       hashmap[cleanCommand] += 1;
     }
   }
-  console.log(userNum);
+
   // now, let's sort the hashmap by value
   const sortedHash = Object.entries(hashmap).sort(
     ([, lowerValue], [, higherValue]) => higherValue - lowerValue
@@ -103,8 +103,12 @@ async function getUrHistories() {
 
 // This is testing for exporting
 
-getUrHistories().then((history) =>
-  console.log(`Here's your top ${history[1]} history command(s)`, history[0])
-);
+getUrHistories().then((history) => {
+  const [historyOutput, numberOfCommands] = history;
+  console.log(
+    `Here's your top ${numberOfCommands} history command(s): \n`,
+    historyOutput
+  );
+});
 
 module.exports = getUrHistories;

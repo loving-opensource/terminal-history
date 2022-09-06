@@ -1,6 +1,6 @@
 # terminal-history
 
-> Get the command history of the user's shell\*\*
+> Get the command history of the user's shell
 
 ## Install
 
