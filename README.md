@@ -8,9 +8,12 @@
 $ npm i terminal-history
 ```
 
-## Usage
+## Usage 
+
+Note: We will make this a global callable CLI in the near future; for now, please `cd` into the `terminal-history` folder. 
 
 ```
+cd terminal-history
 node index.js
 ```
 
