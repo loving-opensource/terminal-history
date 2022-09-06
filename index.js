@@ -1,5 +1,7 @@
 const readline = require("readline");
 const fs = require("fs");
+const os = require("os");
+const path = require("path");
 
 // CONSTANTS
 const hashmap = {};
@@ -8,9 +10,32 @@ let numberToShow = 0;
 // Read the history file and parse the data
 
 function readFile() {
-  const array = fs.readFileSync("testHistory.txt").toString().split("\n");
+  const homeDir = os.homedir();
+  const historyPath = path.join(homeDir, ".bash_history");
+  const possiblePath = [
+    path.join(homeDir, ".bash_history"),
+    path.join(homeDir, ".zsh_history"),
+    path.join(homeDir, ".history"),
+  ];
 
-  return array;
+  // need to find the biggest history file
+
+  let biggestHistorySize = 0;
+  let biggestHistoryPath;
+
+  for (const path of possiblePath) {
+    if (!fs.existsSync(path)) {
+      continue;
+    }
+    if (fs.statSync(path).size > biggestHistorySize) {
+      biggestHistorySize = fs.statSync(path).size;
+      // we want to use biggest history file
+      biggestHistoryPath = path;
+    }
+  }
+  const history = fs.readFileSync(biggestHistoryPath, "utf-8");
+  const histories = history.split(os.EOL);
+  return histories;
 }
 
 // ------------------ THIS IS THE FUNCTION FOR GETTING THE NUMBER OF USER HISTORY --------
@@ -73,13 +98,13 @@ async function getUrHistories() {
     .slice(0, userNum)
     .reduce((a, [k, v]) => ({ ...a, [k]: v }), {});
 
-  return requiredHis;
+  return [requiredHis, userNum];
 }
 
 // This is testing for exporting
 
 getUrHistories().then((history) =>
-  console.log("here's the finished history", history)
+  console.log(`Here's your top ${history[1]} history command(s)`, history[0])
 );
 
 module.exports = getUrHistories;
