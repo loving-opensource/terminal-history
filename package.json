@@ -1,6 +1,6 @@
 {
   "name": "terminal-history",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "bin": {
     "terminal-history": "index.js"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/loving-opensource/terminal-history.git"
