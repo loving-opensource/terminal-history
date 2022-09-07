@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "terminal-history": "index.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/loving-opensource/terminal-history.git"
