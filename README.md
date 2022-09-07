@@ -4,17 +4,21 @@
 
 ## Install
 
-```
-$ npm i terminal-history
-```
-
-## Usage 
-
-Note: We will make this a global callable CLI in the near future; for now, please `cd` into the `terminal-history` folder. 
+Please install with npx (if this fails, please use homebrew to install npm), then please type in `y` to proceed with installation.
 
 ```
-cd terminal-history
-node index.js
+$ npx terminal-history
+
+Need to install the following packages:
+  terminal-history
+Ok to proceed? (y) y
+
+```
+
+## Usage
+
+```
+npx terminal-history
 ```
 
 ## Note:
