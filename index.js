@@ -18,6 +18,7 @@ function readFile() {
     path.join(homeDir, ".bash_history"),
     path.join(homeDir, ".zsh_history"),
     path.join(homeDir, ".history"),
+    path.join(homdir,".local/share/fish/fish_history"),
   ];
 
   // need to find the biggest history file
